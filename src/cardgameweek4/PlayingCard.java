@@ -30,30 +30,39 @@ public  class PlayingCard  extends GamePlayer{
          }
          else
          {
-             //System.out.println("Error: The size of the shuffled deck between players are not equal.");
+             System.out.println("<<<<<  Game Begins >>>>> ");
+             System.out.println("                   ");
+             System.out.println("-.-..-.-..-.-.-.-..-.-..-.-..-.-.-..-..-.-");
               while(true){
             Card p1Card = deckCPU.pop();  //each player place one card face up
             Card p2Card = deckP1.pop();
             
             //display the face up card
+            
             System.out.println(player1 + " plays card is " + p1Card.toString());
             System.out.println("Computer plays card is " + p2Card.toString());
+            
+            System.out.println("                                    ");
+            
             
             //rank comparation between two cards
             if(p1Card.getValue() > p2Card.getValue()){//if player 1 win 
                 deckCPU.addLast(p1Card);  //higher value wins both cards and 
                 deckCPU.addLast(p2Card);  //places them at the bottom of his deck.
                 System.out.println(player1 + " wins the round");
+                System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
             }//end if
  
             else if(p1Card.getValue() < p2Card.getValue()){//if player 2 win 
                 deckP1.addLast(p1Card);   
                 deckP1.addLast(p2Card);  
                 System.out.println("Computer wins the round");
+                System.out.println("-.-.-..-.-.-.-.-.-.-..-.-.-.-.-..-.-.-..--.-.-.");
             }//end else if
             
             else { //war happens when both cards' value matched
-                System.out.println("War"); 
+                System.out.println("   <<<<<<<<<   War    >>>>>>>>>");
+                System.out.println("                   ");
                 
                 //creating war cards
                 List<Card> war1 = new ArrayList<Card>(); 
@@ -73,8 +82,14 @@ public  class PlayingCard  extends GamePlayer{
                 }//end for
                 
                 //only compare result when both players have enough cards for war
+                
                 if(war1.size() == 3 && war2.size() == 3 ){
                     //display the war cards from each player
+                    System.out.println("-.-.-.-..-.-.-.-.-.-..-.-.-.-..-.-..-.-.-.");
+                    System.out.println("                   ");
+                    System.out.println(" <<<<<<< War Time: >>>>>>>");
+                    System.out.println("                   ");
+                     System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                     System.out.println("War card for " +player1 +"  is " + war1.get(0).toString());
                     System.out.println("War card for Computer is " + war2.get(0).toString());
                     
@@ -83,12 +98,15 @@ public  class PlayingCard  extends GamePlayer{
                         deckCPU.addAll(war1); //player1 get all 10 cards
                         deckCPU.addAll(war2);
                         System.out.println(player1 + " wins the war round");
+                         System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                     }//end if
                     //otherwise player 2 wins the war round
                     else{
                         deckP1.addAll(war1); //player2 get all 10 cards
                         deckP1.addAll(war2);
                         System.out.println("Computer wins the war round");
+                        System.out.println("                   ");
+                         System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                     }//end else                      
                 }//end if
                 
@@ -97,10 +115,12 @@ public  class PlayingCard  extends GamePlayer{
             //game over either one player runs out of card(deck size is 0)
             if(deckCPU.size() == 0 ){
                 System.out.println("game over\n" + player1 + " wins the game");
+                 System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                 break;
             }
             else if(deckP1.size() == 0){
                 System.out.println("game over\n Computer wins the game");
+                 System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                 break;
             }
            

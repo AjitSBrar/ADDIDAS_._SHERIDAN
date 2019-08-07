@@ -38,6 +38,7 @@ public abstract class GamePlayer {
         {
         System.out.println("Enter your name to play:");
         player1 = in.nextLine();
+        System.out.println("-.-.--.-.-.-.-.-.-.--.-.-.--.-.-.-.-.--.-.-.--.-.-");
         boolean ans  = false;
         boolean ans1 = false;
         boolean ans2 = false;
