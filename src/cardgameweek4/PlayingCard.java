@@ -29,7 +29,8 @@ public  class PlayingCard  extends GamePlayer{
        
          }
          else
-         {
+         {  
+              int count = 0;
              System.out.println("<<<<<  Game Begins >>>>> ");
              System.out.println("                   ");
              System.out.println("-.-..-.-..-.-.-.-..-.-..-.-..-.-.-..-..-.-");
@@ -123,8 +124,10 @@ public  class PlayingCard  extends GamePlayer{
                  System.out.println("-.-.--.-.-.--.-.-.--.-.-.--.-.-.-.--.-.-.--.-.-");
                 break;
             }
-           
-        }//end while 
+           count ++;
+        }//end while
+              System.out.println("                                 ");
+              System.out.println("Total rounds played:" + count);
          }
         
     }
