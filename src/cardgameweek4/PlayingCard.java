@@ -25,7 +25,13 @@ public  class PlayingCard  extends GamePlayer{
          if(res)
          {
       
-        while(true){
+             System.out.println("Error: The size of the shuffled deck between players are not equal.");
+       
+         }
+         else
+         {
+             //System.out.println("Error: The size of the shuffled deck between players are not equal.");
+              while(true){
             Card p1Card = deckCPU.pop();  //each player place one card face up
             Card p2Card = deckP1.pop();
             
@@ -99,10 +105,6 @@ public  class PlayingCard  extends GamePlayer{
             }
            
         }//end while 
-         }
-         else
-         {
-             System.out.println("Error: The size of the shuffled deck between players are not equal.");
          }
         
     }
